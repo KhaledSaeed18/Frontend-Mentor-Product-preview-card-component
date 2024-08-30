@@ -1,0 +1,140 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+/* Set up CSS Variables */
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --montserrat: 'Montserrat', sans-serif;
+    --fraunces: 'Fraunces', serif;
+
+    --font-weight-regular: 500;
+    --font-weight-bold: 700;
+}
+
+/* Start CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p,
+h1 {
+    overflow-wrap: break-word;
+}
+
+/* End CSS Reset */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 1rem;
+
+    background-color: var(--cream);
+    color: var(--dark-grayish-blue);
+
+    font-size: 0.875rem;
+    font-family: var(--montserrat);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.7;
+}
+
+.card {
+    display: grid;
+
+    max-width: 600px;
+
+    background-color: var(--white);
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.card__details {
+    display: grid;
+    gap: 1rem;
+
+    padding: 1.5rem;
+}
+
+.card__category {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.card__title {
+    color: var(--very-dark-blue);
+
+    font-size: 2rem;
+    font-family: var(--fraunces);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+}
+
+.card__price {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card__price--new {
+    color: var(--dark-cyan);
+
+    font-size: 2rem;
+    font-family: var(--fraunces);
+    font-weight: var(--font-weight-bold);
+}
+
+.card__price--old {
+    text-decoration: line-through;
+}
+
+.card__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.75rem 1.5rem;
+
+    background-color: var(--dark-cyan);
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+
+    border-radius: 0.5rem;
+    border: none;
+
+    cursor: pointer;
+}
+
+.card__button:hover,
+.card__button:focus {
+    filter: brightness(0.8);
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+
+    body {
+        margin: 0;
+    }
+
+    .card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
